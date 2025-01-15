@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+      maximum-pool-size: ${HIKARI_MAXIMUM_POOL_SIZE:30}
+      connection-timeout: ${HIKARI_CONNECTION_TIMEOUT:30000}
+      idle-timeout: ${HIKARI_IDLE_TIMEOUT:600000}
+      max-lifetime: ${HIKARI_MAX_LIFETIME:1800000}
+  h2:
+    console:
+      enabled: ${SPRING_H2_CONSOLE_ENABLED}
+  jpa:
+    generate-ddl: false
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+  liquibase:
+    enabled: ${LIQUIBASE_ENABLED}
+    change-log: ${LIQUIBASE_CHANGE_LOG}
+    contexts: ${LIQUIBASE_CONTEXTS}
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: INFO
+        type: trace
+        org:
+           springframework: INFO
+           shadulla: INFO

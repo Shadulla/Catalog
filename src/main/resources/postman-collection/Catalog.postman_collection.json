@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "c892c879-6a56-44c1-a516-6fc0d1df1dd0",
+		"name": "Catalog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13365147"
+	},
+	"item": [
+		{
+			"name": "Create-Catalog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Electronics1\",\r\n    \"description\": \"Category for electronic items such as laptops, phones, and accessories.\",\r\n    \"images\": [\r\n        {\r\n            \"image_url\": \"https://example.com/images/laptop.jpg\",\r\n            \"image_description\": \"Image of a laptop\"\r\n        },\r\n        {\r\n            \"image_url\": \"https://example.com/images/phone.jpg\",\r\n            \"image_description\": \"Image of a smartphone\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Catalog",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"7115789a-3913-4013-bd9d-bee1567e2091\",\r\n    \"name\": \"Electronics1\",\r\n    \"description\": \"Category for electronic items such as laptops, phones, and accessories.\",\r\n    \"images\": [\r\n        {\r\n            \"id\": \"8aceb293-df5e-40bc-9e7a-f716390f1c3c\",\r\n            \"image_url\": \"https://example.com/images/laptop.jpg\",\r\n            \"image_description\": \"Image of a laptop\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/categories/7115789a-3913-4013-bd9d-bee1567e2091",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categories",
+						"7115789a-3913-4013-bd9d-bee1567e2091"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Catalog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/categories?id=9e59bbef-2c42-41f6-a488-96426dcae890",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categories"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "9e59bbef-2c42-41f6-a488-96426dcae890"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Google-EP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/google-home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"google-home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Catalog",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/categories/863a051b-f60f-4d47-bfac-b4c572742bfc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categories",
+						"863a051b-f60f-4d47-bfac-b4c572742bfc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
